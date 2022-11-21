@@ -9,7 +9,15 @@
   (t.eq world [[0 0 0]
                [0 0 0]]))
 
-;; Test get-cell
+;; Test width
+
+(let [world (life.build-world 3 2)]
+  (t.eq (life.width world) 3))
+
+;; Test height
+
+(let [world (life.build-world 3 2)]
+  (t.eq (life.height world) 2))
 
 (let [world [[0 1 1]
              [0 0 1]]]

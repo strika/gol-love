@@ -7,6 +7,12 @@
     (fcollect [j 1 columns]
       0)))
 
+(fn life.width [world]
+  (length (. world 1)))
+
+(fn life.height [world]
+  (length world))
+
 (fn life.cell [world x y]
   (. world y x))
 
