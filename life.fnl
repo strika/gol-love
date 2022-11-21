@@ -21,4 +21,8 @@
 (fn life.set-cell [world x y value]
   (tset world y x value))
 
+(fn life.neighbours [world x y]
+  "Returns the number of alive neighbour cells of the cell."
+  0)
+
 life
