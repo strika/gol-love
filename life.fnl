@@ -1,4 +1,5 @@
 ;;; Life
+
 (local life {})
 
 (fn life.build-world [columns rows]
@@ -6,7 +7,7 @@
     (fcollect [j 1 columns]
       0)))
 
-(fn life.get-cell [world x y]
+(fn life.cell [world x y]
   (. world y x))
 
 (fn life.set-cell [world x y value]

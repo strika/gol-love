@@ -13,11 +13,11 @@
 
 (let [world [[0 1 1]
              [0 0 1]]]
-  (t.eq (life.get-cell world 1 1) 0)
-  (t.eq (life.get-cell world 2 1) 1)
-  (t.eq (life.get-cell world 3 1) 1)
-  (t.eq (life.get-cell world 1 2) 0)
-  (t.eq (life.get-cell world 3 2) 1))
+  (t.eq (life.cell world 1 1) 0)
+  (t.eq (life.cell world 2 1) 1)
+  (t.eq (life.cell world 3 1) 1)
+  (t.eq (life.cell world 1 2) 0)
+  (t.eq (life.cell world 3 2) 1))
 
 ;; Test set-cell
 
