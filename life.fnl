@@ -1,6 +1,7 @@
 ;;; Life
 
 (local life {})
+(local delta-coordinates [[-1 -1] [0 -1] [1 -1] [-1 0] [0 0] [1 0] [-1 1] [0 1] [1 1]])
 
 (fn life.build-world [columns rows]
   (fcollect [i 1 rows]
@@ -21,8 +22,10 @@
 (fn life.set-cell [world x y value]
   (tset world y x value))
 
-(fn life.neighbours [world x y]
+(fn life.alive-neighbours [world x y]
   "Returns the number of alive neighbour cells of the cell."
-  0)
+  (accumulate [sum 0
+               _ [dx dy] (ipairs delta-coordinates)]
+    (+ sum (life.cell world (+ x dx) (+ y dy)))))
 
 life
