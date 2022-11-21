@@ -14,7 +14,9 @@
   (length world))
 
 (fn life.cell [world x y]
-  (. world y x))
+  (if (or (> x (life.width world)) (< x 1) (> y (life.height world)) (< y 1))
+    0
+    (. world y x)))
 
 (fn life.set-cell [world x y value]
   (tset world y x value))

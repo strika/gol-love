@@ -19,6 +19,8 @@
 (let [world (life.build-world 3 2)]
   (t.eq (life.height world) 2))
 
+;; Test cell
+
 (let [world [[0 1 1]
              [0 0 1]]]
   (t.eq (life.cell world 1 1) 0)
@@ -26,6 +28,15 @@
   (t.eq (life.cell world 3 1) 1)
   (t.eq (life.cell world 1 2) 0)
   (t.eq (life.cell world 3 2) 1))
+
+; Test cell when out of bounds
+
+(let [world [[1 1 1]
+             [1 1 1]]]
+  (t.eq (life.cell world 1 0) 0)
+  (t.eq (life.cell world 0 1) 0)
+  (t.eq (life.cell world 4 1) 0)
+  (t.eq (life.cell world 1 4) 0))
 
 ;; Test set-cell
 
