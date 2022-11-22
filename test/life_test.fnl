@@ -59,4 +59,20 @@
   (t.eq (life.alive-neighbours world 2 2) 5)
   (t.eq (life.alive-neighbours world 3 3) 2))
 
+;; Test evolve
+
+(let [world [[0 0 0 0 0 0]
+             [0 0 0 0 0 0]
+             [0 0 1 1 1 0]
+             [0 1 1 1 0 0]
+             [0 0 0 0 0 0]
+             [0 0 0 0 0 0]]]
+  (t.eq (life.evolve world)
+        [[0 0 0 0 0 0]
+         [0 0 0 1 0 0]
+         [0 1 0 0 1 0]
+         [0 1 0 0 1 0]
+         [0 0 1 0 0 0]
+         [0 0 0 0 0 0]]))
+
 (t.run!)

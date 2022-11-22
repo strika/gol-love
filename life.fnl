@@ -28,4 +28,16 @@
                _ [dx dy] (ipairs delta-coordinates)]
     (+ sum (life.cell world (+ x dx) (+ y dy)))))
 
+(fn life.alive? [world x y]
+  "Returns 1 if the cell will be alive in the next iteration and 0 otherwise."
+  0)
+
+(fn life.evolve [world]
+  "Returns the next iteration of the world."
+  (let [new-world (life.build-world (life.width world) (life.height world))]
+    (for [x 1 (life.width world)]
+      (for [y 1 (life.height world)]
+        (life.set-cell new-world x y (life.alive? world x y))))
+    new-world))
+
 life
