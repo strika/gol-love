@@ -30,7 +30,10 @@
 
 (fn life.alive? [world x y]
   "Returns 1 if the cell will be alive in the next iteration and 0 otherwise."
-  0)
+  (let [n (life.alive-neighbours world x y)]
+    (if (= (life.cell world x y) 1)
+      (if (or (= n 2) (= n 3)) 1 0)
+      (if (= n 3) 1 0))))
 
 (fn life.evolve [world]
   "Returns the next iteration of the world."
