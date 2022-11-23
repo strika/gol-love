@@ -9,6 +9,14 @@
   (t.eq world [[0 0 0]
                [0 0 0]]))
 
+;; Test build-random-world
+
+(let [world (life.build-random-world 12 8)]
+  (t.is-table world)
+  (t.eq (life.width world) 12)
+  (t.eq (life.height world) 8)
+  (t.neq (life.evolve world) world))
+
 ;; Test width
 
 (let [world (life.build-world 3 2)]

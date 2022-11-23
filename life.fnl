@@ -8,6 +8,12 @@
     (fcollect [j 1 columns]
       0)))
 
+(fn life.build-random-world [columns rows]
+  "Returns world where cells have random values."
+  (fcollect [i 1 rows]
+    (fcollect [j 1 columns]
+      (math.random 0 1))))
+
 (fn life.width [world]
   (length (. world 1)))
 
