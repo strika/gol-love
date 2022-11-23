@@ -1,6 +1,6 @@
 # gol-love
 
-Game of Live in Fennel and Love
+Game of Live in [Fennel](https://fennel-lang.org/) and [Love](https://love2d.org/).
 
 ![Game of Life](screenshot.png "Game of Life")
 
