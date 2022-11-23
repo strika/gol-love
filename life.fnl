@@ -25,6 +25,9 @@
     0
     (. world y x)))
 
+(fn life.alive? [world x y]
+  (= (life.cell world x y) 1))
+
 (fn life.set-cell [world x y value]
   (tset world y x value))
 

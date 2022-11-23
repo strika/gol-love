@@ -37,7 +37,7 @@
   (t.eq (life.cell world 1 2) 0)
   (t.eq (life.cell world 3 2) 1))
 
-; Test cell when out of bounds
+;; Test cell when out of bounds
 
 (let [world [[1 1 1]
              [1 1 1]]]
@@ -45,6 +45,15 @@
   (t.eq (life.cell world 0 1) 0)
   (t.eq (life.cell world 4 1) 0)
   (t.eq (life.cell world 1 4) 0))
+
+;; Test alive?
+
+(let [world [[0 1]
+             [1 0]]]
+  (t.false (life.alive? world 1 1))
+  (t.true (life.alive? world 2 1))
+  (t.true (life.alive? world 1 2))
+  (t.false (life.alive? world 2 2)))
 
 ;; Test set-cell
 
