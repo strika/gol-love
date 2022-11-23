@@ -70,8 +70,8 @@
              [0 0 1]
              [1 1 0]]]
   (t.eq (life.alive-neighbours world 1 1) 1)
-  (t.eq (life.alive-neighbours world 2 1) 3)
-  (t.eq (life.alive-neighbours world 3 1) 3)
+  (t.eq (life.alive-neighbours world 2 1) 2)
+  (t.eq (life.alive-neighbours world 3 1) 2)
   (t.eq (life.alive-neighbours world 1 2) 3)
   (t.eq (life.alive-neighbours world 2 2) 5)
   (t.eq (life.alive-neighbours world 3 3) 2))

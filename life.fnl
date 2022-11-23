@@ -1,7 +1,7 @@
 ;;; Life
 
 (local life {})
-(local delta-coordinates [[-1 -1] [0 -1] [1 -1] [-1 0] [0 0] [1 0] [-1 1] [0 1] [1 1]])
+(local delta-coordinates [[-1 -1] [0 -1] [1 -1] [-1 0] [1 0] [-1 1] [0 1] [1 1]])
 
 (fn life.build-world [columns rows]
   (fcollect [i 1 rows]
@@ -40,7 +40,7 @@
 (fn life.alive-in-next? [world x y]
   "Returns 1 if the cell will be alive in the next iteration and 0 otherwise."
   (let [n (life.alive-neighbours world x y)]
-    (if (= (life.cell world x y) 1)
+    (if (life.alive? world x y)
       (if (or (= n 2) (= n 3)) 1 0)
       (if (= n 3) 1 0))))
 
